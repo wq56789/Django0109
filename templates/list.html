@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+
+<body>
+    <h1 align="center">学生信息如下</h1>
+
+    <table align="center" border="1" width="500px">
+        <tr>
+            <td><b>编号</b></td>
+            <td><b>姓名</b></td>
+            <td><b>性别</b></td>
+            <td><b>年龄</b></td>
+            <td><b>籍贯</b></td>
+            <td><b>修改</b></td>
+            <td><b>删除</b></td>
+        </tr>
+        {% for i in list %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.sex }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.jg }}</td>
+            <td><a href="/find/?sid={{ i.id }}">修改</a></td>
+            <td><a href="/delete/?sid={{ i.id }}">删除</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
